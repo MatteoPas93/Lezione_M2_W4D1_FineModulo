@@ -1,0 +1,28 @@
+.contenitore {
+  text-align: center;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(170, 66, 66);
+
+  width: 100%;
+}
+
+body {
+  background-color: rgb(228, 114, 114);
+  /* background-size: 100%; */
+}
+
+.bottone {
+  margin-top: 5px;
+  border-radius: 40px;
+  background-color: rgb(170, 66, 66) ;
+  font-weight: bold ;
+}
+
+.lista {
+  margin-top: 40px;
+}
