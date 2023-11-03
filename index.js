@@ -93,7 +93,7 @@ const infoUser = function (title, location) {
 
   const results = [];
 
-  // Con un ciclo for vado ad esaminare il contenuto dell'array e vado a selezionare quali elemenenti 
+  // Con un ciclo for vado ad esaminare il contenuto dell'array e vado a selezionare quali elemenenti
   // dell'array jobs saranno pushati nell'array results.
 
   for (let i = 0; i < jobs.length; i++) {
@@ -107,7 +107,7 @@ const infoUser = function (title, location) {
     }
   }
 
-  // Attraverso il return creo gli oggetti titleAndLocation e counter. A titleAndLocation andrò a dare a 
+  // Attraverso il return creo gli oggetti titleAndLocation e counter. A titleAndLocation andrò a dare a
   // il valore dei risultati dell'array results, mentre a counter il valore della lunghezza dell'array
   // results, cioè il numero degli oggetti trovati.
 
@@ -125,8 +125,9 @@ console.log(searchResults);
 const ul = document.querySelector("ul");
 const counter = document.querySelector(".lista");
 
-// Creo una funzione che andrò in seguito ad applicare al button, in modo da eseguire la funzione 
-// ogni volta che si andrà ad interagire con il button.
+// Creo una funzione che andrò in seguito ad applicare al button, ogni volta che verrà cliccato
+// la funzione si eseguirà.
+// Assegno a delle costanti il valore dell'input title e dell'input location adattandolo con toLowerCase.
 
 const searchJob = function () {
   const inputJob = document.querySelector("#title");
@@ -138,10 +139,17 @@ const searchJob = function () {
   ul.innerHTML = "";
   counter.innerText = "";
 
-  if (title.trim() === "" || location.trim() === "") {
+  // Attraverso un if specifico che se il valore di title e location è uguale a 0, deve tornare
+  // un alert e una stringa.
+
+  if (title === "" || location === "") {
     counter.innerText = ` - Results: 0`;
+    alert("You have not entered any search information!!");
     return;
   }
+
+  // Con l'utilizzo di un ciclo for, aggiungo il valore di job.title e job.location all'interno di un <li>
+  // contenuto nella ul (const ul = ul di index.html).
 
   for (let i = 0; i < jobs.length; i++) {
     const job = jobs[i];
@@ -153,7 +161,7 @@ const searchJob = function () {
       ul.innerHTML += `<li>${job.title} - ${job.location}</li>`;
     }
   }
-  counter.innerText = `Job found: ${count}`;
+  counter.innerText = ` - Job found: ${count}`;
 };
 
 const button = document.querySelector("button");
