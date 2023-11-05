@@ -144,12 +144,15 @@ const searchJob = function () {
 
   if (title === "" || location === "") {
     counter.innerText = ` - Results: 0`;
-    alert("You have not entered any search information!!");
+    alert("Enter more information!!");
     return;
   }
 
   // Con l'utilizzo di un ciclo for, aggiungo il valore di job.title e job.location all'interno di un <li>
-  // contenuto nella ul (const ul = ul di index.html).
+  // contenuto nella ul (const ul = ul di index.html). Con una variante creata precedentemente (count), a cui
+  // ho assegnato valore 0, andrò attraverso l'algoritmo ad aumentare il valore di 1 ogni volta che troverà
+  // gli oggetti title e location una volta inserito il loro valore.
+  // Con counter.innerText si stamperà la quantità di oggetti trovati.
 
   for (let i = 0; i < jobs.length; i++) {
     const job = jobs[i];
@@ -158,7 +161,7 @@ const searchJob = function () {
       job.location.toLowerCase().includes(location)
     ) {
       count++;
-      ul.innerHTML += `<li>${job.title} - ${job.location}</li>`;
+      ul.innerHTML += `<li>${job.title} - ${job.location} </li>`;
     }
   }
   counter.innerText = ` - Job found: ${count}`;
